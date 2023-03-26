@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Gotham Pro";
+  src: 
+    url("./assets/gothampro.ttf") format("truetype");
+}
+
+*, *::after, *::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --base-card-background: #696969;
+  --color-primary: #9E9E9E;
+  --color-active: #ffffff;
+
+  height: 100%;
+}
+
+body {
+  background-color: rgb(53, 53, 53);
+  color: var(--color-primary);
+  font-family: 'Gotham Pro', sans-serif;
+  font-size: 22px;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
