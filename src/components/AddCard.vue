@@ -17,8 +17,9 @@ defineProps<{ onTap: VoidFunction }>()
   position: relative;
   display: grid;
   place-items: center;
+  cursor: pointer;
 
-  &::after {
+  &:hover::after {
     content: "";
     position: absolute;
     inset: -2px;

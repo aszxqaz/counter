@@ -13,23 +13,23 @@ defineProps<{
 <template>
   <BaseCard
     class="counter-card"
-    :class="{ active: counter.state === 'IN_PROGRESS' }">
+    :class="{ active: counter.state as unknown as string === 'IN_PROGRESS' }">
     <div class="counter-card__time">{{ counter.time }}</div>
     <div class="counter-card__controls">
       <Button
-        :active="counter.state === 'IN_PROGRESS'"
-        v-if="counter.state === 'IDLE' || counter.state === 'PAUSED'"
+        :active="counter.state as unknown as string === 'IN_PROGRESS'"
+        v-if="counter.state as unknown as string === 'IDLE' || counter.state as unknown as string === 'PAUSED'"
         :onTap="() => counter.start()"
         :iconSrc="controlsIconsSrc.start" />
       <Button
-        :active="counter.state === 'IN_PROGRESS'"
+        :active="counter.state as unknown as string === 'IN_PROGRESS'"
         :onTap="() => counter.pause()"
-        v-if="counter.state === 'IN_PROGRESS'"
+        v-if="counter.state as unknown as string === 'IN_PROGRESS'"
         :iconSrc="controlsIconsSrc.pause" />
       <Button
-        :active="counter.state === 'IN_PROGRESS'"
+        :active="counter.state as unknown as string === 'IN_PROGRESS'"
         :onTap="() => counter.reset()"
-        v-if="counter.state !== 'IDLE'"
+        v-if="counter.state as unknown as string !== 'IDLE'"
         :iconSrc="controlsIconsSrc.reset" />
     </div>
     <div class="counter-card__close" @click="handleRemove()">

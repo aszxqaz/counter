@@ -11,8 +11,8 @@ export const useCounterStore = defineStore("counter", {
   actions: {
     add() {
       const counter = new Counter(defaultFormatter)
-      counter.start()
-      this.counters.unshift(counter)
+      counter.start();
+      (this.counters as unknown as Counter[]).unshift(counter)
     },
     remove(id: number) {
       const index = this.counters.findIndex((counter) => counter.id === id)

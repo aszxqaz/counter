@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Counter from "./components/Counter.vue"
+import { Counter as CounterClass } from "./store/counter";
 import AddCard from "./components/AddCard.vue"
 import { useCounterStore } from "./store"
 
@@ -10,7 +11,7 @@ const store = useCounterStore()
   <div class="cards-grid">
     <Counter
       v-for="counter in store.counters"
-      :counter="counter"
+      :counter="counter as unknown as CounterClass"
       :key="counter.id"
       :handle-remove="() => store.remove(counter.id)" />
     <AddCard :on-tap="store.add" />

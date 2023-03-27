@@ -1,5 +1,4 @@
-export const iconAccentColor = "#FFFFFF"
-export const iconPrimaryColor = "#9E9E9E"
+
 
 export const controlsIconsSrc = {
   pause: "./assets/pause.svg",
@@ -7,4 +6,3 @@ export const controlsIconsSrc = {
   start: "./assets/start.svg",
   add: "./assets/add.svg"
 }
-
